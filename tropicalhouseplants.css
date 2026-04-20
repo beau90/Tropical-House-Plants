@@ -1,0 +1,349 @@
+/* Reset and base styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #92a87a;  
+  line-height: 1.6;
+}
+
+/* Navigation bar */
+
+#page {
+  background-color: #2e3f24;
+  width: 1000px;
+  margin: 5px auto 0 auto;
+  display: flex;
+  justify-content: center;
+  padding: 15px 0;
+  border-radius: 8px;
+}
+
+.topNaviagationLink {
+  margin: 0 15px;
+}
+
+.topNaviagationLink a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 15px;
+  transition: background-color 0.3s ease;
+}
+
+.topNaviagationLink a:hover {
+  background-color: #b8c4a0;
+  border-radius: 5px;
+}
+
+/* Header image section */
+
+#mainPicture {
+  background: url('homeimage.jpg') no-repeat center center;
+  background-size: 1000px;
+  height: 375px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;  
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.7);  
+}
+
+.picture {
+  padding: 20px;
+}
+
+#headerTitle {
+  font-size: 3em;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  color: #000000;  
+}
+
+#headerSubtext {
+  font-size: 1.5em;
+  font-weight: normal;  
+  color: #000000;
+  margin-top: -25px;
+  margin-left: 30px;
+}
+
+/* Content section */
+
+.contentBox {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+
+.innerBox {
+  padding: 10px;
+}
+
+.contentTitle {
+  font-size: 1.8em;
+  color: #2e3f24;
+  margin: 30px 0 10px;
+  border-bottom: 2px solid #2e3f24;
+  padding-bottom: 5px;
+}
+
+.contentText p {
+  margin-bottom: 20px;
+  color: #52633b;
+}
+
+#mainContentBox {
+	max-width: 1000px;
+	margin: 40px auto;
+	padding: 20px;
+	background-color: #6f8a5a;
+	box-shadow: 0 0 10px;
+	border-radius: 8px;
+}
+
+/* Calc Box */
+
+#calculatorBox {
+	float: left;
+	width: 250px;
+	margin: 40px auto 0 100px;
+	padding: 20px;
+	background-color: #6f8a5a;
+	border: 2px solid #2e3f24;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0,0,0,0.1);
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	color: #FFFFFF;
+}
+
+#calculatorBox input {
+	width: 100%;
+	padding: 10px;
+	margin-top: 5px;
+	margin-bottom: 15px;
+	border: 1px solid #2e3f24;
+	border-radius: 8px;
+	font-size: 16px;
+	background-color: #FFFFFF;
+	color: #2e3f24;
+}
+
+#calculatorBox button {
+  width: 100%;
+  padding: 10px;
+  background-color: #2e3f24;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#calculatorBox #result {
+  margin-top: 15px;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+
+#calculatorBox button:hover {
+  background-color: #45a049;
+}
+
+/* Light Advisor Box */
+
+#lightAdvisorBox {
+  float: left;
+  width: 250px;
+  margin: 450px auto 0 -250px;
+  padding: 10px;
+  background-color: #6f8a5a;
+  border: 2px solid #2e3f24;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  gap: 5px; 
+  box-sizing: border-box;
+}
+
+#lightAdvisorBox h3 {
+  font-size: 18px;
+  margin-bottom: 6px;
+  text-align: left;
+}
+
+#lightAdvisorBox label {
+  font-size: 16px;
+  margin-bottom: 4px;
+  text-align: left;
+  display: block;
+}
+
+#lightAdvisorBox select {
+  width: 100%;
+  padding: 6px;
+  border-radius: 8px;
+  border: 1px solid #2e3f24;
+  background-color: #FFFFFF;
+  color: #2e3f24;
+  font-size: 16px;
+  box-sizing: border-box;
+  margin-top: -25px;
+}
+
+#lightAdvisorBox #suggestion {
+  font-size: 16px;
+  margin-top: -50px;
+  color: #FFFFFF;
+}
+
+/* Plant Order Form */
+
+#plantOrderForm {
+  float: right;
+  width: 250px;
+  margin: 40px 100px 0 auto;
+  padding: 20px;
+  background-color: #6f8a5a;
+  border: 2px solid #2e3f24;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+#plantOrderForm input[type="text"],
+#plantOrderForm input[type="email"],
+#plantOrderForm input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #2e3f24;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #FFFFFF;
+  color: #2e3f24;
+  box-sizing: border-box;
+  margin-bottom: -10px;
+}
+
+#plantOrderForm .plantOption {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 16px;
+  color: #FFFFFF;
+  margin-bottom: -10px;
+}
+
+#plantOrderForm .plantOption input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #2e3f24;
+  margin: 0;
+}
+
+#plantOrderForm button {
+  width: 100%;
+  padding: 10px;
+  background-color: #2e3f24;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#plantOrderForm button:hover {
+  background-color: #45a049;
+}
+
+#plantOrderForm #liveTotalDisplay,
+#plantOrderForm #errorDisplay {
+  font-weight: bold;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+#plantOrderForm h2,
+#plantOrderForm h3 {
+  font-size: 18px; 
+  margin-bottom: 8px;
+}
+
+/* listBox */
+#wishListBox {
+  top: 300px;
+  float: left;
+  width: 250px;
+  margin: 635px auto 0 -250px;  
+  padding: 10px;
+  background-color: #6f8a5a;
+  border: 2px solid #2e3f24;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  gap: 5px; 
+  box-sizing: border-box;
+}
+
+/* Heading */
+#wishListBox h2 {
+  font-size: 18px;
+  margin-bottom: 6px;
+  text-align: left;
+}
+
+/* Checkbox labels */
+#wishListBox label {
+  font-size: 16px;
+  margin-bottom: 4px;
+  text-align: left;
+  display: block;
+}
+
+/* Textarea styling */
+#wishListBox textarea {
+  width: 100%;
+  padding: 6px;
+  border-radius: 8px;
+  border: 1px solid #2e3f24;
+  background-color: #FFFFFF;
+  color: #2e3f24;
+  font-size: 16px;
+  box-sizing: border-box;
+  resize: none;
+  margin-top: -25px;
+}
+
+/* Footer */
+#footer {
+  max-width: 1000px;
+  margin: 40px auto 0 auto;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9em;
+  color: #FFFFFF;
+  background-color: #2e3f24;
+  border-radius: 8px;
+
+
+

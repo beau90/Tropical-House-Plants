@@ -1,0 +1,114 @@
+/* 3-8e
+
+Case Projects:
+Individual Case Project #3
+
+Plan and add a feature to one of the web pages in your personal site that incorporates content or functionality created by a series of if, if else, and/or else if statements, or by a switch statement. View and test your page in one or more browsers as appropriate to ensure it works as you expect. */
+
+I made changes to the Index.html file (Home Page) and added an else if statements for a Light Advisor Box.
+
+function recommendPlant() {
+  const light = document.getElementById("light").value;
+  const suggestion = document.getElementById("suggestion");
+
+  if (light === "low") {
+    suggestion.textContent = "A ZZ Plant or Snake Plant would thrive in low light!";
+  } else if (light === "medium") {
+    suggestion.textContent = "Peace Lily or Calathea would thrive in medium light!";
+  } else if (light === "high") {
+    suggestion.textContent = "Bird of Paradise or Fiddle Leaf Fig would thrive in High Light!";
+  } else {
+    suggestion.textContent = "";
+  }
+}
+
+/* 4-8e
+
+Case Projects:
+Individual Case Project #4
+
+Add exception handling to the code for one of the forms on your personal website. If your site does not include a form, add one first. Your code should display one or more relevant error messages in an appropriate location. After you finalize your code, write a summary of the debugging methods from this chapter that you used in this project, describing how you used each one in your code. */
+
+I added a Form to pick out plants and order them and added a shipping form to enter in contact info and shipping info and added used some debugging methods.
+
+function submitOrder() {
+  const name = document.getElementById("name").value.trim();
+  const address = document.getElementById("address").value.trim();
+  const city = document.getElementById("city").value.trim();
+  const state = document.getElementById("state").value.trim();
+  const zip = document.getElementById("zip").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const email = document.getElementById("email").value.trim();
+
+  const errorDisplay = document.getElementById("errorDisplay");
+
+  try {
+    const missingFields = [];
+    if (!name) missingFields.push("Name");
+    if (!address) missingFields.push("Address");
+    if (!city) missingFields.push("City");
+    if (!state) missingFields.push("State");
+    if (!zip) missingFields.push("Zip Code");
+    if (!phone) missingFields.push("Phone Number");
+    if (!email) missingFields.push("Email");
+
+    if (missingFields.length > 0) {
+      throw new Error(`Please fill out the following fields: ${missingFields.join(", ")}`);
+    }
+
+    // Check for digits in name or city
+    const digitPattern = /\d/;
+    const invalidFields = [];
+    if (digitPattern.test(name)) invalidFields.push("Name");
+    if (digitPattern.test(city)) invalidFields.push("City");
+
+    if (invalidFields.length > 0) {
+      throw new Error(`The following fields should not contain numbers: ${invalidFields.join(", ")}`);
+    }
+
+    
+    const phonePattern = /^(\d{3}-?\d{3}-?\d{4}|\d{10})$/;
+    if (!phonePattern.test(phone)) {
+      throw new Error("Phone Number must contain only digits.");
+    }
+
+    
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+      throw new Error("Please enter a valid email address (e.g., name@domain.com).");
+    }
+
+    const selectedPlants = Array.from(document.querySelectorAll('input[name="plant"]:checked'));
+    if (selectedPlants.length === 0) {
+      throw new Error("Please select at least one plant.");
+    }
+
+    alert(`Thank you, ${name}! Your order has been received.`);
+    errorDisplay.textContent = "";
+  } catch (err) {
+    errorDisplay.textContent = `${err.message}`;
+  } finally {
+    errorDisplay.style.fontStyle = "bold";
+  }
+}
+
+const checkboxes = document.querySelectorAll('input[name="plant"]');
+const liveTotalDisplay = document.getElementById("liveTotalDisplay");
+
+
+checkboxes.forEach(box => {
+  box.addEventListener("change", updateLiveTotal);
+});
+
+function updateLiveTotal() {
+  let total = 0;
+  checkboxes.forEach(box => {
+    if (box.checked) {
+      const price = parseFloat(box.value);
+      if (!isNaN(price)) {
+        total += price;
+      }
+    }
+  });
+  liveTotalDisplay.textContent = `Total: $${total.toFixed(2)}`;
+}

@@ -1,0 +1,15 @@
+7-9e
+Case Projects
+Individual Case Project
+Enhance the feedback form in your project to enable users to choose one or more options from a list of at least five options. Include code that adds user selections to either an array or an object and ensure that if a user deselects one of the options, it is removed from the array or object. Add code to convert the array or object to a string.
+
+Changes made to the website is I added a wish list box for the user to click and then the plant selections go down into the box and then the user can delete or add any random plants into the box.
+
+  const form = document.getElementById('plantForm');
+  const listBox = document.getElementById('listBox');
+
+  form.addEventListener('change', () => {
+    const selectedPlants = Array.from(form.querySelectorAll('input[type="checkbox"]:checked'))
+      .map(checkbox => checkbox.value);
+    listBox.value = selectedPlants.join('\n');
+  });

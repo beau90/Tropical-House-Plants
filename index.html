@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="tropicalhouseplants.css" />
+<script src="soilvolumecalc.js" defer></script>
+<script src="lightadvisor.js" defer></script>
+<script src="plantorder.js" defer></script>
+<script src="plantwishlist.js" defer></script>
+<title>All About Tropical House Plants</title>
+</head>
+
+<body>
+    <div id="page">
+        <div class="topNaviagationLink"><a href="index.html">Home</a></div>
+        <div class="topNaviagationLink"><a href="monstera.html">Monstera</a></div>
+        <div class="topNaviagationLink"><a href="zzplant.html">ZZ Plant</a></div>
+        <div class="topNaviagationLink"><a href="moneyplant.html">Money Plant</a></div>
+	    <div class="topNaviagationLink"><a href="snakeplant.html">Snake Plant</a></div>
+	</div>
+	
+	<div id="calculatorBox">
+		<h3>Soil Volume Calculator</h3>
+		<label for="diameter">Pot Diameter (Inches):</label><br>
+		<input type="number" id="diameter" placeholder="e.g. 8&quot;"><br><br>
+		
+		<label for ="depth">Pot Depth (Inches):</label><br>
+		<input type="number" id="depth" placeholder="e.g. 10&quot;"><br><br>
+		
+		<button onclick="calculateSoil()">Calculate Soil Volume</button><br><br>
+		
+		<div id ="result"></div>
+	</div>
+	
+	<div id="wishListBox">
+	<h2>House Plant Wish List:</h2>
+	<form id="plantForm">
+		<label><input type="checkbox" value="Monstera Deliciosa"> Monstera Deliciosa</label><br>
+		<label><input type="checkbox" value="ZZ Plant"> ZZ Plant</label><br>
+		<label><input type="checkbox" value="Chinese Money Plant"> Chinese Money Plant</label><br>
+		<label><input type="checkbox" value="Snake Plant"> Snake Plant</label><br>
+		<label><input type="checkbox" value="Fiddle Leaf Fig"> Fiddle Leaf Fig</label><br>
+	</form>	
+	<textarea id="listBox" rows="5" cols="25" readonly></textarea>
+	</div>
+
+	<div id="lightAdvisorBox">
+		<h3>Plant Light Advisor</h3>
+			<label for="light">Select Room's Light Level:</label><br>
+				<select id="light" onchange="recommendPlant()">
+					<option value="">*Choose Level*</option>
+					<option value="low">Low</option>
+					<option value="medium">Medium</option>
+					<option value="high">High</option>
+				</select><br><br>
+	<div id="suggestion"></div>
+	</div>
+	
+	<form id="plantOrderForm">
+		<h2>Choose Your Plants</h2>
+			<label class="plantOption"><input type="checkbox" name="plant" value="20"> Monstera ($20)</label><br>
+			<label class="plantOption"><input type="checkbox" name="plant" value="15"> ZZ Plant ($15)</label><br>
+			<label class="plantOption"><input type="checkbox" name="plant" value="10"> Money Plant ($10)</label><br>
+			<label class="plantOption"><input type="checkbox" name="plant" value="8"> Snake Plant ($8)</label><br><br>
+			
+		<h2>Shipping Order Form</h2>
+			<input type="text" id="name" placeholder="Full Name"><br>
+			<input type="text" id="address" placeholder="Street Address"><br>
+			<input type="text" id="city" placeholder="City"><br>
+			<input type="text" id="state" placeholder="State"><br>
+			<input type="text" id="zip" placeholder="Zip Code"><br>
+			<input type="text" id="phone" placeholder="Phone Number"><br>
+			<input type="text" id="email" placeholder="Email"><br><br>
+
+		<p id="liveTotalDisplay"> Total: $0.00</p>
+		<button type="button" onclick="submitOrder()">Order Now</button>
+		<p id="errorDisplay" style="color: red;"></p>
+	</form>
+	
+    <div id="mainContentBox">
+		<div id="mainPicture">
+    	<div class="picture">
+        	<div id="headerTitle">Tropical House Plants</div>
+            <div id="headerSubtext">About, Care Basics, & Varieties/Types</div>
+        </div>
+    </div>
+        <div class="contentBox">
+    	<div class="innerBox">
+        	<div class="contentTitle">Introduction to Tropical House Plants:</div>
+          <div class="contentText">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl nec tincidunt lacinia, 
+				nunc urna fermentum lorem, nec facilisis justo sapien a nulla. Curabitur vel sem vel sapien 
+				tincidunt tincidunt. Fusce vitae justo nec sapien tincidunt convallis.</p></br>
+				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer mi. Vivamus sit amet neque vitae sapien bibendum sodales. Curabitur elementum. Duis imperdiet. Donec eleifend porttitor sapien. Praesent leo. Quisque auctor velit sed tellus. Suspendisse potenti. Aenean laoreet imperdiet nunc. Donec commodo suscipit dolor. Aenean nibh. Sed id odio. Aliquam lobortis risus ut felis. Sed vehicula pellentesque quam.</p></br>
+				<p>Vestibulum augue quam, interdum id, congue semper, convallis non, velit. Quisque augue tortor, tristique ac, scelerisque eget, aliquam id, sem. Aenean lorem. Fusce velit nibh, dapibus quis, laoreet nec, porta a, dui. Nullam ac urna. Proin eget elit. Nunc scelerisque venenatis urna. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce congue, turpis ut commodo mattis, pede erat fringilla tellus, pulvinar suscipit odio lorem sed pede.</p></div>
+        
+        <div class="contentTitle">Propagating Tropical House Plants:</div>
+            <div class="contentText">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl nec tincidunt lacinia, 
+				nunc urna fermentum lorem, nec facilisis justo sapien a nulla. Curabitur vel sem vel sapien 
+				tincidunt tincidunt. Fusce vitae justo nec sapien tincidunt convallis.</p></br>
+				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer mi. Vivamus sit amet neque vitae sapien bibendum sodales. Curabitur elementum. Duis imperdiet. Donec eleifend porttitor sapien. Praesent leo. Quisque auctor velit sed tellus. Suspendisse potenti. Aenean laoreet imperdiet nunc. Donec commodo suscipit dolor. Aenean nibh. Sed id odio. Aliquam lobortis risus ut felis. Sed vehicula pellentesque quam.</p></br>
+				<p>Vestibulum augue quam, interdum id, congue semper, convallis non, velit. Quisque augue tortor, tristique ac, scelerisque eget, aliquam id, sem. Aenean lorem. Fusce velit nibh, dapibus quis, laoreet nec, porta a, dui. Nullam ac urna. Proin eget elit. Nunc scelerisque venenatis urna. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce congue, turpis ut commodo mattis, pede erat fringilla tellus, pulvinar suscipit odio lorem sed pede.</p></div>        
+        
+        <div class="contentTitle">Common Issues & Troubleshooting:</div>
+          <div class="contentText">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl nec tincidunt lacinia, 
+				nunc urna fermentum lorem, nec facilisis justo sapien a nulla. Curabitur vel sem vel sapien 
+				tincidunt tincidunt. Fusce vitae justo nec sapien tincidunt convallis.</p></br>
+				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer mi. Vivamus sit amet neque vitae sapien bibendum sodales. Curabitur elementum. Duis imperdiet. Donec eleifend porttitor sapien. Praesent leo. Quisque auctor velit sed tellus. Suspendisse potenti. Aenean laoreet imperdiet nunc. Donec commodo suscipit dolor. Aenean nibh. Sed id odio. Aliquam lobortis risus ut felis. Sed vehicula pellentesque quam.</p></br>
+				<p>Vestibulum augue quam, interdum id, congue semper, convallis non, velit. Quisque augue tortor, tristique ac, scelerisque eget, aliquam id, sem. Aenean lorem. Fusce velit nibh, dapibus quis, laoreet nec, porta a, dui. Nullam ac urna. Proin eget elit. Nunc scelerisque venenatis urna. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce congue, turpis ut commodo mattis, pede erat fringilla tellus, pulvinar suscipit odio lorem sed pede.</p></div>
+        </div>
+
+    </div>
+        <div id="footer"><a>Chris Beaudoin</a></div>
+</body>
+</html>
