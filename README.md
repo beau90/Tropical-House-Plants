@@ -3,4 +3,4 @@
 A responsive tropical houseplant website built for my scripting languages class. It features plant profiles, care tips, organized sections, and a clean layout using HTML, CSS, and JavaScript. Designed to highlight accessibility, simple navigation, and visually appealing plant imagery.
 
 # View Website Here
-https://github.com/beau90/Tropical-House-Plants
+https://beau90.github.io/Tropical-House-Plants
